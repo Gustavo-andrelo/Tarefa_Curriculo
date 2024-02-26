@@ -1,0 +1,137 @@
+App.module.ts
+import { NgModule } from '@angular/core';
+import { BrowserModule } from '@angular/platform-browser';
+
+import { AppComponent } from './app.component';
+
+@NgModule({
+  declarations: [
+    AppComponent
+  ],
+  imports: [
+    BrowserModule
+  ],
+  providers: [],
+  bootstrap: [AppComponent]
+})
+export class AppModule { }
+
+App.component
+<div class="container">
+  <h1>Meu Currículo</h1>
+  <div>
+    <h2>Dados Pessoais</h2>
+    <p>Nome: {{ nome }}</p>
+    <p>Email: {{ email }}</p>
+    <p>Telefone: {{ telefone }}</p>
+    <p>Nascimento: {{nascimento}}</p>
+    <p>Idiomas: {{idiomas}}</p>
+    <p>Objetivos: {{objetivos}}</p>
+    <p>CEP: {{cep}}</p>
+    <p>Endereco: {{endereco}}</p>
+  </div>
+  <div>
+
+    <ul>
+
+    </ul>
+  </div>
+  <div>
+    <h2>Educação</h2>
+    <ul>
+      <li *ngFor="let educacao of educacoes">
+        <strong>{{ educacao.instituicao }}</strong> - {{ educacao.curso }} ({{ educacao.periodo }})
+      </li>
+    </ul>
+  </div>
+</div>
+
+App.component.HTML
+div class="container">
+  <h1>Meu Currículo</h1>
+  <div>
+    <h2>Dados Pessoais</h2>
+    <p>Nome: {{ nome }}</p>
+    <p>Email: {{ email }}</p>
+    <p>Endereco: {{endereco}}</p>
+    <p>CEP: {{cep}}</p>
+    <p>Telefone: {{ telefone }}</p>
+    <p>Nascimento: {{nascimento}}</p>
+    <p>Idiomas: {{idiomas}}</p>
+    <p>Objetivos: {{objetivos}}</p>
+
+  </div>
+  <div>
+
+    <ul>
+
+    </ul>
+  </div>
+  <div>
+    <h2>Educação</h2>
+    <ul>
+      <li *ngFor="let educacao of educacoes">
+        <strong>{{ educacao.instituicao }}</strong> - {{ educacao.curso }} ({{ educacao.periodo }})
+      </li>
+    </ul>
+  </div>
+</div>
+
+App.component.spec.ts
+import { TestBed } from '@angular/core/testing';
+import { RouterTestingModule } from '@angular/router/testing';
+import { AppComponent } from './app.component';
+
+describe('AppComponent', () => {
+  beforeEach(async () => {
+    await TestBed.configureTestingModule({
+      imports: [
+        RouterTestingModule
+      ],
+      declarations: [
+        AppComponent
+      ],
+    }).compileComponents();
+  });
+
+  it('should create the app', () => {
+    const fixture = TestBed.createComponent(AppComponent);
+    const app = fixture.componentInstance;
+    expect(app).toBeTruthy();
+  });
+
+  it(`should have as title 'Tarefa'`, () => {
+    const fixture = TestBed.createComponent(AppComponent);
+    const app = fixture.componentInstance;
+  });
+
+  it('should render title', () => {
+    const fixture = TestBed.createComponent(AppComponent);
+    fixture.detectChanges();
+    const compiled = fixture.nativeElement as HTMLElement;
+    expect(compiled.querySelector('h1')?.textContent).toContain('Hello, Tarefa');
+  });
+});
+
+App.component.ts
+import { Component } from '@angular/core';
+
+@Component({
+  selector: 'app-root',
+  templateUrl: './app.component.html',
+  styleUrls: ['./app.component.css']
+})
+export class AppComponent {
+  nome: string = 'Gustavo Da Silva Andrelo';
+  nascimento: string = '13/11/2005';
+  email: string = 'andrelog56@gmail.com';
+  endereco: string = 'Rua Petronilia Faião Nogueira';
+  cep: string = '13308-503';
+  telefone: string = '(11)97139-2467';
+  idiomas: string = 'Portugues-Nativo,Inglês-Basico,Espanhol-Intermediário';
+  objetivos: string = 'Buscar ampliar meus conhecimentos da area e aumentar minha experiencia para cargos mais expressivos';
+  educacoes: any[] = [
+    { instituicao: 'Etec Martinho Di Cieiro', curso: 'Desenvolvimento de Sistemas', periodo: '2021-2023' },
+    { instituicao: 'Fatec Dom Amaury Castanho', curso: 'Analise em Desenvolvimento de Sistemas', periodo: '2024 - 2025' }
+  ];
+}
