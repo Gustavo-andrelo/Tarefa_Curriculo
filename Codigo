@@ -60,6 +60,7 @@ div class="container">
     <p>Idiomas: {{idiomas}}</p>
     <p>Objetivos: {{objetivos}}</p>
 
+
   </div>
   <div>
 
@@ -74,6 +75,16 @@ div class="container">
         <strong>{{ educacao.instituicao }}</strong> - {{ educacao.curso }} ({{ educacao.periodo }})
       </li>
     </ul>
+  </div>
+<div class="secao">
+    <h2>Informações adicionais</h2>
+    <li class="ativo">Determinação</li>
+    <li class="ativo">Foco</li>
+    <li class="ativo">Dedicação</li>
+    <li class="ativo">Comunicativo</li>
+    <li class="ativo">Trabalha bem em equipe</li>
+    <li class="ativo">Atento a detalhes</li>
+    <li class="ativo">Preocupação com a equipe</li>
   </div>
 </div>
 
