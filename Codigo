@@ -136,7 +136,7 @@ export class AppComponent {
   nome: string = 'Gustavo Da Silva Andrelo';
   nascimento: string = '13/11/2005';
   email: string = 'andrelog56@gmail.com';
-  endereco: string = 'Rua Petronilia Faião Nogueira';
+  endereco: string = 'Rua Petronilia Faião Nogueira-32';
   cep: string = '13308-503';
   telefone: string = '(11)97139-2467';
   idiomas: string = 'Portugues-Nativo,Inglês-Basico,Espanhol-Intermediário';
