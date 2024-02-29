@@ -188,3 +188,19 @@ h2 {
   width: 100%;
 }
 
+App-Routing-Module.ts
+import { NgModule } from '@angular/core';
+import { RouterModule, Routes } from '@angular/router';
+import { AppComponent } from './app.component';
+
+const routes: Routes = [
+  { path: '', component: AppComponent },
+  // Você pode adicionar rotas adicionais para outras páginas aqui, se desejar
+];
+
+@NgModule({
+  imports: [RouterModule.forRoot(routes)],
+  exports: [RouterModule]
+})
+export class AppRoutingModule { }
+
